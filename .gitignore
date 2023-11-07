@@ -4,6 +4,10 @@
 # Log file
 *.log
 
+# file: ~/.gitignore_global
+.DS_Store
+.idea
+
 # BlueJ files
 *.ctxt
 
