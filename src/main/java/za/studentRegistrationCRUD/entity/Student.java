@@ -2,7 +2,7 @@ package za.studentRegistrationCRUD.entity;
 
 public class Student {
 
-    private int studentId;
+    private int studentNo;
     private String firstname;
     private String lastname;
     private String email;
@@ -10,19 +10,19 @@ public class Student {
     public Student() {
     }
 
-    public Student(int studentId, String firstname, String lastname, String email) {
-        this.studentId = studentId;
+    public Student(int studentNo, String firstname, String lastname, String email) {
+        this.studentNo = studentNo;
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
     }
 
-    public int getStudentId() {
-        return studentId;
+    public int getStudentNo() {
+        return studentNo;
     }
 
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
+    public void setStudentId(int studentNo) {
+        this.studentNo = studentNo;
     }
 
     public String getFirstname() {
@@ -52,7 +52,7 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "studentId=" + studentId +
+                "studentNo=" + studentNo +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", email='" + email + '\'' +

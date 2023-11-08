@@ -4,33 +4,33 @@ import za.studentRegistrationCRUD.dao.studentDAO;
 import za.studentRegistrationCRUD.dao.studentDAOImpl;
 import za.studentRegistrationCRUD.entity.Student;
 
-public class studentServiceImpl implements studentService {
+public class StudentServiceImpl implements StudentService {
     @Override
     public int ssSaveStudent(Student student) {
         studentDAO dao = new studentDAOImpl();
-        int noOfQueries =dao.daoSaveStudent(student);
-        return noOfQueries;
+        return dao.daoSaveStudent(student);
+
     }
 
     @Override
-    public Student ssGetStudentById(int studentId) {
+    public Student ssGetStudentByNo(int studentNo) {
 
         studentDAO dao = new studentDAOImpl();
-       return dao.daoGetStudentById(studentId);
+       return dao.daoGetStudentByNo(studentNo);
 
     }
 
     @Override
     public boolean ssUpdateStudent(Student student) {
         studentDAO dao = new studentDAOImpl();
-        dao.daoUpdateStudent(student);
-        return true;
+        return dao.daoUpdateStudent(student);
+
     }
 
     @Override
-    public boolean ssDeleteStudentById(int studentId) {
+    public boolean ssDeleteStudentByNo(int studentNo) {
         studentDAO dao = new studentDAOImpl();
-        dao.daoDeleteStudentById(studentId);
-        return true;
+        return dao.daoDeleteStudentByNo(studentNo);
+
     }
 }

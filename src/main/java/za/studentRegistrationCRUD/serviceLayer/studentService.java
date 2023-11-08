@@ -2,10 +2,10 @@ package za.studentRegistrationCRUD.serviceLayer;
 
 import za.studentRegistrationCRUD.entity.Student;
 
-public interface studentService {
+public interface StudentService {
 
     int ssSaveStudent(Student student);
-    Student ssGetStudentById(int studentId);
+    Student ssGetStudentByNo(int studentNo);
     boolean ssUpdateStudent(Student student);
-    boolean ssDeleteStudentById(int studentId);
+    boolean ssDeleteStudentByNo(int studentNo);
 }

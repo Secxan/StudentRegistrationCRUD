@@ -19,7 +19,7 @@ public class studentDAOImpl implements studentDAO{
         try{
 
             statement = util.getStatement();
-            String sql = "insert into student(student_id,first_name,last_name,email)"+"values(\'"+student.getStudentId()+"\',\'"+student.getFirstname()+"\',\'"+student.getLastname()+"\',\'"+student.getEmail()+"\')";
+            String sql = "insert into student(student_no,first_name,last_name,email)"+"values(\'"+student.getStudentNo()+"\',\'"+student.getFirstname()+"\',\'"+student.getLastname()+"\',\'"+student.getEmail()+"\')";
             noOfQueries = statement.executeUpdate(sql);
             statement.close();
         } catch(Exception e){
@@ -30,7 +30,7 @@ public class studentDAOImpl implements studentDAO{
     }
 
     @Override
-    public Student daoGetStudentById(int studentId) {
+    public Student daoGetStudentByNo(int studentNo) {
 
         JDBCUtil util = new JDBCUtil();
         Statement statement =  null;
@@ -38,19 +38,20 @@ public class studentDAOImpl implements studentDAO{
 
         try {
             statement = util.getStatement();
-            String sql = "select * from student where student_id ="+studentId;
+            String sql = "select * from student where student_no ="+studentNo;
             ResultSet rs = statement.executeQuery(sql);
 
             while (rs.next()){
 
                 student = new Student();
 
-                student.setStudentId(rs.getInt("student_id"));
+                student.setStudentId(rs.getInt("student_no"));
                 student .setFirstname(rs.getString("first_name"));
                 student.setLastname(rs.getString("last_name"));
                 student.setEmail(rs.getString("email"));
-                statement.close();
+
             }
+            statement.close();
 
         }catch (Exception e){
             e.printStackTrace();
@@ -67,7 +68,7 @@ public class studentDAOImpl implements studentDAO{
         try {
 
             statement= util.getStatement();
-            String sql = "update student set first_name=\'"+student.getFirstname()+"\',last_name=\'"+student.getLastname()+"\',email=\'"+student.getEmail()+"\',where student_id=\'"+student.getStudentId()+"\'";
+            String sql = "update student set first_name=\'"+student.getFirstname()+"\', last_name=\'"+student.getLastname()+"\', email=\'"+student.getEmail()+"\' where student_no="+student.getStudentNo();
             statement.executeUpdate(sql);
             statement.close();
         }catch (Exception e){
@@ -76,15 +77,16 @@ public class studentDAOImpl implements studentDAO{
         return true;
     }
 
+
     @Override
-    public boolean daoDeleteStudentById(int studentId) {
+    public boolean daoDeleteStudentByNo(int studentNo) {
         JDBCUtil util = new JDBCUtil();
         Statement statement= null;
 
         try {
 
             statement = util.getStatement();
-            String sql = "delete from student where student_id="+studentId;
+            String sql = "delete from student where student_no="+studentNo;
             statement.executeUpdate(sql);
 
         }catch (Exception e){

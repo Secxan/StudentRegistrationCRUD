@@ -4,9 +4,9 @@ import za.studentRegistrationCRUD.entity.Student;
 
 public interface studentDAO {
     int daoSaveStudent(Student student);
-    Student daoGetStudentById(int studentId);
+    Student daoGetStudentByNo(int studentNo);
     boolean daoUpdateStudent(Student student);
-    boolean daoDeleteStudentById(int studentId);
+    boolean daoDeleteStudentByNo(int studentNo);
 
 
 
