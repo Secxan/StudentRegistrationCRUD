@@ -44,10 +44,14 @@ public class Login extends JFrame {
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(usernameText.getText().equals("lesedi")&& passwordText.getText().equals("pass"))
+                if(usernameText.getText().equals("lesedi")&& passwordText.getText().equals("pass")) {
                     dispose();
-                else
-                    JOptionPane.showMessageDialog(null,"Incorrect username or password");
+                    MyLandingPage myLandingPage = new MyLandingPage();
+                    myLandingPage.arrangeComponents();
+                }else {
+                        JOptionPane.showMessageDialog(null,"Incorrect username of password");
+                }
+
             }
         });
 
