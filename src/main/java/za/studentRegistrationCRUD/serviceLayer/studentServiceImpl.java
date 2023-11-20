@@ -4,6 +4,8 @@ import za.studentRegistrationCRUD.dao.studentDAO;
 import za.studentRegistrationCRUD.dao.studentDAOImpl;
 import za.studentRegistrationCRUD.entity.Student;
 
+import java.util.List;
+
 public class StudentServiceImpl implements StudentService {
     @Override
     public int ssSaveStudent(Student student) {
@@ -32,5 +34,11 @@ public class StudentServiceImpl implements StudentService {
         studentDAO dao = new studentDAOImpl();
         return dao.daoDeleteStudentByNo(studentNo);
 
+    }
+
+    @Override
+    public List<Student> getAllStudents() {
+        studentDAO dao = new studentDAOImpl();
+        return dao.getAllStudents();
     }
 }

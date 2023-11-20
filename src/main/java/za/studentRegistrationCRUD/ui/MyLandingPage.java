@@ -52,9 +52,15 @@ public class MyLandingPage extends JFrame {
         insertStudent.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                InsertStudent insertStudent = new InsertStudent();
-                //arrangeComponents();
-                //arrangeComponents();
+                InsertStudent insertStudent = new InsertStudent(null,contentPane,"Submit");
+                insertStudent.arrangeComponents();
+
+                contentPane.removeAll();
+                contentPane.add(insertStudent);
+                contentPane.validate();
+                contentPane.invalidate();
+                contentPane.repaint();
+                contentPane.setVisible(true);
 
 
 

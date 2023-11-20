@@ -21,7 +21,7 @@ public class Student {
         return studentNo;
     }
 
-    public void setStudentId(int studentNo) {
+    public void setStudentNo(int studentNo) {
         this.studentNo = studentNo;
     }
 
